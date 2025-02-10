@@ -252,7 +252,7 @@ function getCityCoordinates(){
 function getUserCoordinates(){
     navigator.geolocation.getCurrentPosition(position => {
         let {latitude, longitude} = position.coords;
-        let REVERSE_GEOCODING_URL = `http://api.openweathermap.org/geo/1.0/reverse?lat=${latitude}&lon=${longitude}&appid=${api_key}`;
+        let REVERSE_GEOCODING_URL = `https://api.openweathermap.org/geo/1.0/reverse?lat=${latitude}&lon=${longitude}&appid=${api_key}`;
 
         fetch(REVERSE_GEOCODING_URL).then(res => res.json()).then(data => {
             let {name, country, state} = data[0];
